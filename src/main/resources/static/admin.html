@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Complaint Box</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/admin.html"><span class="brand-mark small">SC</span> Complaint Box <span class="admin-tag">ADMIN</span></a>
+    <div class="top-actions"><span class="welcome">Administrator</span><button class="btn outline small-btn" id="logoutBtn">Logout</button></div>
+  </header>
+  <main class="container">
+    <section class="page-heading"><div><p class="eyebrow">MANAGEMENT PORTAL</p><h1>Complaints overview</h1><p class="muted">Review student concerns and keep everyone informed.</p></div><button class="btn outline" id="refreshBtn">↻ Refresh data</button></section>
+    <section class="stats-grid">
+      <article class="stat-card"><span class="stat-icon purple">▤</span><div><p>Total complaints</p><strong id="totalCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon amber">◷</span><div><p>Pending</p><strong id="pendingCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon blue">↻</span><div><p>In progress</p><strong id="progressCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon green">✓</span><div><p>Resolved</p><strong id="resolvedCount">0</strong></div></article>
+    </section>
+    <section class="panel admin-panel">
+      <div class="section-title"><div><p class="eyebrow">STUDENT SUBMISSIONS</p><h2>All complaints</h2></div></div>
+      <div class="toolbar"><input id="searchInput" class="search" placeholder="Search title, student or category...">
+        <select id="statusFilter"><option value="">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option></select>
+        <select id="priorityFilter"><option value="">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Complaint</th><th>Student</th><th>Category</th><th>Priority</th><th>Date</th><th>Status / Action</th></tr></thead><tbody id="adminTable"><tr><td colspan="6" class="empty">Loading complaints...</td></tr></tbody></table></div>
+      <p id="adminMessage" class="message" aria-live="polite"></p>
+    </section>
+    <p class="footer-note">Handle student submissions respectfully and update statuses when action is taken.</p>
+  </main>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
